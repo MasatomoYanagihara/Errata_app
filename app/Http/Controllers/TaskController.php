@@ -10,4 +10,9 @@
      {
          return Task::all(); // Taskモデルから全件取得してリターン
      }
+
+     public function show(Task $task)
+     {
+         return $task; // URLパラメータで受け取ったTaskモデルをリターン
+     }
  }
