@@ -21,4 +21,10 @@
      {
          return $task; // URLパラメータで受け取ったTaskモデルをリターン
      }
+
+     public function update(Request $request, Task $task)
+     {
+         $task->update($request->all());
+         return $task;
+     }
  }
