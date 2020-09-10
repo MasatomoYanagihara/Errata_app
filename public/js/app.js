@@ -1959,6 +1959,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2073,7 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    taskId: String
+    taskId: Number
   },
   data: function data() {
     return {
@@ -2246,7 +2248,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    taskId: String
+    taskId: Number
   },
   data: function data() {
     return {
@@ -37900,25 +37902,36 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid bg-dark mb-3" }, [
     _c("div", { staticClass: "container" }, [
-      _c("nav", { staticClass: "navbar navbar-dark" }, [
-        _c("span", { staticClass: "navbar-brand mb-0 h1" }, [
-          _vm._v("Vue Laravel SPA")
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _c("router-link", { attrs: { to: { name: "task.list" } } }, [
-              _c("button", { staticClass: "btn btn-success" }, [_vm._v("List")])
-            ]),
-            _vm._v(" "),
-            _c("router-link", { attrs: { to: { name: "task.create" } } }, [
-              _c("button", { staticClass: "btn btn-success" }, [_vm._v("ADD")])
+      _c(
+        "nav",
+        { staticClass: "navbar navbar-dark" },
+        [
+          _c("router-link", { attrs: { to: { name: "task.list" } } }, [
+            _c("span", { staticClass: "navbar-brand mb-0 h1" }, [
+              _vm._v("正誤表.com")
             ])
-          ],
-          1
-        )
-      ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            [
+              _c("router-link", { attrs: { to: { name: "task.list" } } }, [
+                _c("button", { staticClass: "btn btn-secondary" }, [
+                  _vm._v("一覧")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: { name: "task.create" } } }, [
+                _c("button", { staticClass: "btn btn-secondary" }, [
+                  _vm._v("追加")
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
     ])
   ])
 }
@@ -37965,7 +37978,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "title" }
                 },
-                [_vm._v("Title")]
+                [_vm._v("タイトル")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -37998,7 +38011,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "content" }
                 },
-                [_vm._v("Content")]
+                [_vm._v("内容")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38031,7 +38044,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "person-in-charge" }
                 },
-                [_vm._v("Person In Charge")]
+                [_vm._v("編集者")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38060,7 +38073,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Submit")]
+              [_vm._v("登録")]
             )
           ]
         )
@@ -38144,7 +38157,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "title" }
                 },
-                [_vm._v("Title")]
+                [_vm._v("タイトル")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38177,7 +38190,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "content" }
                 },
-                [_vm._v("Content")]
+                [_vm._v("内容")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38210,7 +38223,7 @@ var render = function() {
                   staticClass: "col-sm-3 col-form-label",
                   attrs: { for: "person-in-charge" }
                 },
-                [_vm._v("Person In Charge")]
+                [_vm._v("編集者")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38239,7 +38252,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Submit")]
+              [_vm._v("送信")]
             )
           ]
         )
@@ -38297,7 +38310,7 @@ var render = function() {
                   },
                   [
                     _c("button", { staticClass: "btn btn-primary" }, [
-                      _vm._v("Show")
+                      _vm._v("詳細")
                     ])
                   ]
                 )
@@ -38317,7 +38330,7 @@ var render = function() {
                   },
                   [
                     _c("button", { staticClass: "btn btn-success" }, [
-                      _vm._v("Edit")
+                      _vm._v("編集")
                     ])
                   ]
                 )
@@ -38336,7 +38349,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Delete")]
+                [_vm._v("削除")]
               )
             ])
           ])
@@ -38355,17 +38368,17 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Id")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("タイトル")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("内容")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Person In Charge")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("編集者")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("詳細")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Edit")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("編集")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Delete")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("削除")])
       ])
     ])
   }
@@ -38432,7 +38445,7 @@ var render = function() {
                 staticClass: "col-sm-3 col-form-label",
                 attrs: { for: "title" }
               },
-              [_vm._v("Title")]
+              [_vm._v("タイトル")]
             ),
             _vm._v(" "),
             _c("input", {
@@ -38465,7 +38478,7 @@ var render = function() {
                 staticClass: "col-sm-3 col-form-label",
                 attrs: { for: "content" }
               },
-              [_vm._v("Content")]
+              [_vm._v("内容")]
             ),
             _vm._v(" "),
             _c("input", {
@@ -38498,7 +38511,7 @@ var render = function() {
                 staticClass: "col-sm-3 col-form-label",
                 attrs: { for: "person-in-charge" }
               },
-              [_vm._v("Person In Charge")]
+              [_vm._v("編集者")]
             ),
             _vm._v(" "),
             _c("input", {

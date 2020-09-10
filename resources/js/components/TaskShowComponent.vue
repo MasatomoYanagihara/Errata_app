@@ -14,7 +14,7 @@
             />
           </div>
           <div class="form-group row border-bottom">
-            <label for="title" class="col-sm-3 col-form-label">Title</label>
+            <label for="title" class="col-sm-3 col-form-label">タイトル</label>
             <input
               type="text"
               class="col-sm-9 form-control-plaintext"
@@ -24,7 +24,7 @@
             />
           </div>
           <div class="form-group row border-bottom">
-            <label for="content" class="col-sm-3 col-form-label">Content</label>
+            <label for="content" class="col-sm-3 col-form-label">内容</label>
             <input
               type="text"
               class="col-sm-9 form-control-plaintext"
@@ -34,7 +34,7 @@
             />
           </div>
           <div class="form-group row border-bottom">
-            <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
+            <label for="person-in-charge" class="col-sm-3 col-form-label">編集者</label>
             <input
               type="text"
               class="col-sm-9 form-control-plaintext"
@@ -52,7 +52,7 @@
  <script>
 export default {
   props: {
-    taskId: String,
+    taskId: Number,
   },
   data() {
     return {
