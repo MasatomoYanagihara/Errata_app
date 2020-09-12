@@ -1,42 +1,9 @@
-import VueRouter from "vue-router";
+import Vue from "vue";
+import router from "./router.js";
 import HeaderComponent from "./components/HeaderComponent";
-import TaskListComponent from "./components/TaskListComponent";
-import TaskCreateComponent from "./components/TaskCreateComponent";
-import TaskShowComponent from "./components/TaskShowComponent";
-import TaskEditComponent from "./components/TaskEditComponent";
 
 require("./bootstrap");
-window.Vue = require("vue");
-
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-    mode: "history",
-    routes: [
-        {
-            path: "/tasks",
-            name: "task.list",
-            component: TaskListComponent
-        },
-        {
-            path: "/tasks/create",
-            name: "task.create",
-            component: TaskCreateComponent
-        },
-        {
-            path: "/tasks/:taskId",
-            name: "task.show",
-            component: TaskShowComponent,
-            props: true
-        },
-        {
-            path: "/tasks/:taskId/edit",
-            name: "task.edit",
-            component: TaskEditComponent,
-            props: true
-        }
-    ]
-});
+// window.Vue = require("vue"); いらない？
 
 Vue.component(
     "example-component",
@@ -44,7 +11,7 @@ Vue.component(
 );
 Vue.component("header-component", HeaderComponent);
 
-const app = new Vue({
+new Vue({
     el: "#app",
-    router
+    router: router
 });
