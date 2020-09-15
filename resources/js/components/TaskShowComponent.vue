@@ -61,9 +61,14 @@ export default {
   },
   methods: {
     getTask() {
-      axios.get("/api/tasks/" + this.taskId).then((res) => {
-        this.task = res.data;
-      });
+      axios
+        .get("/api/tasks/" + this.taskId)
+        .then((res) => {
+          this.task = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
   mounted() {

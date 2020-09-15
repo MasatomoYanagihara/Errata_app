@@ -49,14 +49,24 @@ export default {
   },
   methods: {
     getTask() {
-      axios.get("/api/tasks/" + this.taskId).then((res) => {
-        this.task = res.data;
-      });
+      axios
+        .get("/api/tasks/" + this.taskId)
+        .then((res) => {
+          this.task = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     submit() {
-      axios.put("/api/tasks/" + this.taskId, this.task).then((res) => {
-        this.$router.push({ name: "task.list" }); // データ更新後、一覧ページにリダイレクト
-      });
+      axios
+        .put("/api/tasks/" + this.taskId, this.task)
+        .then((res) => {
+          this.$router.push({ name: "task.list" }); // データ更新後、一覧ページにリダイレクト
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
   mounted() {

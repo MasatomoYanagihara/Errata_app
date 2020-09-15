@@ -1985,6 +1985,8 @@ __webpack_require__.r(__webpack_exports__);
           name: "task.list"
         }); // データ登録後、一覧ページにリダイレクト
 
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }
@@ -2055,6 +2057,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/tasks/" + this.taskId).then(function (res) {
         _this.task = res.data;
+      })["catch"](function (error) {
+        console.log(error);
       });
     },
     submit: function submit() {
@@ -2065,6 +2069,8 @@ __webpack_require__.r(__webpack_exports__);
           name: "task.list"
         }); // データ更新後、一覧ページにリダイレクト
 
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   },
@@ -2135,6 +2141,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/tasks").then(function (res) {
         _this.tasks = res.data;
+      })["catch"](function (error) {
+        console.log(error);
       });
     },
     deleteTask: function deleteTask(id) {
@@ -2143,6 +2151,8 @@ __webpack_require__.r(__webpack_exports__);
       axios["delete"]("/api/tasks/" + id).then(function (res) {
         _this2.getTasks(); // データ削除後、データ一覧を再読み込み
 
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   },
@@ -2228,6 +2238,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/tasks/" + this.taskId).then(function (res) {
         _this.task = res.data;
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   },

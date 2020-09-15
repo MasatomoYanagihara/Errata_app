@@ -46,14 +46,24 @@ export default {
   },
   methods: {
     getTasks() {
-      axios.get("/api/tasks").then((res) => {
-        this.tasks = res.data;
-      });
+      axios
+        .get("/api/tasks")
+        .then((res) => {
+          this.tasks = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     deleteTask(id) {
-      axios.delete("/api/tasks/" + id).then((res) => {
-        this.getTasks(); // データ削除後、データ一覧を再読み込み
-      });
+      axios
+        .delete("/api/tasks/" + id)
+        .then((res) => {
+          this.getTasks(); // データ削除後、データ一覧を再読み込み
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
   mounted() {

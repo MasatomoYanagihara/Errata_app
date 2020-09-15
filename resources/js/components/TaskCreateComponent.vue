@@ -36,9 +36,14 @@ export default {
   },
   methods: {
     submit() {
-      axios.post("/api/tasks", this.task).then((res) => {
-        this.$router.push({ name: "task.list" }); // データ登録後、一覧ページにリダイレクト
-      });
+      axios
+        .post("/api/tasks", this.task)
+        .then((res) => {
+          this.$router.push({ name: "task.list" }); // データ登録後、一覧ページにリダイレクト
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
