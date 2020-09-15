@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import NotFoundComponent from "./components/NotFoundComponent";
 import TaskListComponent from "./components/TaskListComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
@@ -18,6 +19,11 @@ export default new VueRouter({
         }
     },
     routes: [
+        {
+            // VueRouterに設定されていないURLはNotFoundを表示する
+            path: "*",
+            component: NotFoundComponent
+        },
         {
             path: "/tasks",
             name: "task.list",
