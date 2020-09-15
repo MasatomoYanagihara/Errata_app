@@ -13,5 +13,5 @@ Vue.component("header-component", HeaderComponent);
 
 new Vue({
     el: "#app",
-    router: router
+    router
 });

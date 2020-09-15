@@ -1,13 +1,13 @@
 import Vue from "vue";
-import Router from "vue-router";
+import VueRouter from "vue-router";
 import TaskListComponent from "./components/TaskListComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
 import TaskEditComponent from "./components/TaskEditComponent";
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-export default new Router({
+export default new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
     scrollBehavior(to, from, savedPosition) {
