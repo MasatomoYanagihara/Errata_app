@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-6">
-        <form @submit.prevent="submit">
+        <form @submit.prevent="updateData">
           <div class="form-group row">
             <label for="id" class="col-sm-3 col-form-label">ID</label>
             <input
@@ -30,7 +30,7 @@
               v-model="task.person_in_charge"
             />
           </div>
-          <button type="submit" class="btn btn-primary">送信</button>
+          <button type="submit" class="btn btn-primary">更新</button>
         </form>
       </div>
     </div>
@@ -58,7 +58,7 @@ export default {
           console.log(error);
         });
     },
-    submit() {
+    updateData() {
       axios
         .put("/api/tasks/" + this.taskId, this.task)
         .then((res) => {

@@ -1973,7 +1973,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      task: {}
+      task: {
+        title: "",
+        content: "",
+        person_in_charge: ""
+      }
     };
   },
   methods: {
@@ -2061,7 +2065,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     },
-    submit: function submit() {
+    updateData: function updateData() {
       var _this2 = this;
 
       axios.put("/api/tasks/" + this.taskId, this.task).then(function (res) {
@@ -38075,7 +38079,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.submit($event)
+                return _vm.updateData($event)
               }
             }
           },
@@ -38215,7 +38219,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("送信")]
+              [_vm._v("更新")]
             )
           ]
         )

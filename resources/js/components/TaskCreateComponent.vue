@@ -31,7 +31,11 @@
 export default {
   data: function () {
     return {
-      task: {},
+      task: {
+        title: "",
+        content: "",
+        person_in_charge: "",
+      },
     };
   },
   methods: {
