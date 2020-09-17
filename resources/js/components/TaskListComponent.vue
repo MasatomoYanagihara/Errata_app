@@ -19,7 +19,7 @@
             <!-- <th scope="row">{{ task.id }}</th> -->
             <td>{{ task.title }}</td>
             <td>{{ task.content }}</td>
-            <td>{{ task.person_in_charge }}</td>
+            <td>{{ task.author }}</td>
             <td>
               <router-link :to="{name: 'task.show', params: {taskId: task.id }}">
                 <button class="btn btn-secondary">詳細</button>
@@ -52,6 +52,7 @@ export default {
       axios
         .get("/api/tasks")
         .then((res) => {
+          console.log(res.data)
           this.tasks = res.data;
         })
         .catch((error) => {

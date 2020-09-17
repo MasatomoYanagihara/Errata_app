@@ -2150,6 +2150,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/tasks").then(function (res) {
+        console.log(res.data);
         _this.tasks = res.data;
       })["catch"](function (error) {
         console.log(error);
@@ -38320,7 +38321,7 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(task.content))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(task.person_in_charge))]),
+              _c("td", [_vm._v(_vm._s(task.author))]),
               _vm._v(" "),
               _c(
                 "td",

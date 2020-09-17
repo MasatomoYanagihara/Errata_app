@@ -3,6 +3,7 @@
  namespace App\Http\Controllers\Api;
 
  use App\Models\Task;
+ use App\Models\Book;
  use Illuminate\Http\Request;
  use App\Http\Controllers\Controller;
 
@@ -10,7 +11,8 @@
  {
      public function index()
      {
-         return Task::all(); // Taskモデルから全件取得してリターン
+         //  return Book::all(); // Taskモデルから全件取得してリターン
+         return Book::with('publisher')->get();
      }
 
      public function store(Request $request)
@@ -18,9 +20,9 @@
          return Task::create($request->all()); // リクエストで受け取ったデータを登録
      }
 
-     public function show(Task $task)
+     public function show(Book $task)
      {
-         return $task; // URLパラメータで受け取ったTaskモデルをリターン
+         return $task; // URLパラメータで受け取ったBookモデルをリターン
      }
 
      public function update(Request $request, Task $task)
@@ -43,4 +45,12 @@
             ->get();
          return $serchBook;
      }
+     //  public function serchBook(Request $request)
+    //  {
+    //      $title = $request->input('title');
+    //      $serchBook = Task::where('title', '=', $title)
+    //         ->select("id", "title", "content")
+    //         ->get();
+    //      return $serchBook;
+    //  }
  }

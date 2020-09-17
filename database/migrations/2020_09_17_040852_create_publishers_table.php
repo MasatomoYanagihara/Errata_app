@@ -4,7 +4,7 @@
         use Illuminate\Database\Schema\Blueprint;
         use Illuminate\Database\Migrations\Migration;
         
-        class CreateCorrectsTable extends Migration
+        class CreatePublishersTable extends Migration
         {
             /**
              * Run the migrations.
@@ -13,22 +13,19 @@
              */
             public function up()
             {
-                Schema::create("corrects", function (Blueprint $table) {
+                Schema::create("publishers", function (Blueprint $table) {
 
 						$table->increments('id');
-						$table->integer('books_id');
-						$table->string('detaile'); //正誤情報
-						$table->integer('users_id');
+						$table->string('name'); //出版社名
 						$table->timestamps();
+						$table->softDeletes();
 
 
 
 						// ----------------------------------------------------
-						// -- SELECT [corrects]--
+						// -- SELECT [publishers]--
 						// ----------------------------------------------------
-						// $query = DB::table("corrects")
-						// ->leftJoin("books","books.id", "=", "corrects.books_id")
-						// ->leftJoin("users","users.id", "=", "corrects.users_id")
+						// $query = DB::table("publishers")
 						// ->get();
 						// dd($query); //For checking
 
@@ -44,7 +41,7 @@
              */
             public function down()
             {
-                Schema::dropIfExists("corrects");
+                Schema::dropIfExists("publishers");
             }
         }
     
