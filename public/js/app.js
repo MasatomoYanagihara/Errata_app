@@ -1973,13 +1973,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       task: {
         title: "",
-        content: "",
-        person_in_charge: ""
+        author: "",
+        publisher: "",
+        year_of_publication: ""
       }
     };
   },
@@ -2139,6 +2149,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2150,6 +2161,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/tasks").then(function (res) {
+        console.log(res.data);
         _this.tasks = res.data;
       })["catch"](function (error) {
         console.log(error);
@@ -38034,7 +38046,7 @@ var render = function() {
                 "label",
                 {
                   staticClass: "col-sm-3 col-form-label",
-                  attrs: { for: "content" }
+                  attrs: { for: "publisher" }
                 },
                 [_vm._v("出版社")]
               ),
@@ -38044,19 +38056,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.task.content,
-                    expression: "task.content"
+                    value: _vm.task.publisher,
+                    expression: "task.publisher"
                   }
                 ],
                 staticClass: "col-sm-9 form-control",
-                attrs: { type: "text", id: "content" },
-                domProps: { value: _vm.task.content },
+                attrs: { type: "text", id: "publisher" },
+                domProps: { value: _vm.task.publisher },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.task, "content", $event.target.value)
+                    _vm.$set(_vm.task, "publisher", $event.target.value)
                   }
                 }
               })
@@ -38067,9 +38079,9 @@ var render = function() {
                 "label",
                 {
                   staticClass: "col-sm-3 col-form-label",
-                  attrs: { for: "person-in-charge" }
+                  attrs: { for: "author" }
                 },
-                [_vm._v("編集者")]
+                [_vm._v("著者")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -38077,19 +38089,56 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.task.person_in_charge,
-                    expression: "task.person_in_charge"
+                    value: _vm.task.author,
+                    expression: "task.author"
                   }
                 ],
                 staticClass: "col-sm-9 form-control",
-                attrs: { type: "text", id: "person-in-charge" },
-                domProps: { value: _vm.task.person_in_charge },
+                attrs: { type: "text", id: "author" },
+                domProps: { value: _vm.task.author },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.task, "person_in_charge", $event.target.value)
+                    _vm.$set(_vm.task, "author", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "col-sm-3 col-form-label",
+                  attrs: { for: "year_of_publication" }
+                },
+                [_vm._v("出版年")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.task.year_of_publication,
+                    expression: "task.year_of_publication"
+                  }
+                ],
+                staticClass: "col-sm-9 form-control",
+                attrs: { type: "text", id: "year_of_publication" },
+                domProps: { value: _vm.task.year_of_publication },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.task,
+                      "year_of_publication",
+                      $event.target.value
+                    )
                   }
                 }
               })
@@ -38318,9 +38367,11 @@ var render = function() {
             return _c("tr", { key: task.id }, [
               _c("td", [_vm._v(_vm._s(task.title))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(task.content))]),
+              _c("td", [_vm._v(_vm._s(task.publisher.name))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(task.person_in_charge))]),
+              _c("td", [_vm._v(_vm._s(task.author))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(task.year_of_publication))]),
               _vm._v(" "),
               _c(
                 "td",
@@ -38382,6 +38433,8 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("著者")]),
         _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("出版年")]),
+        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("詳細")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("編集")])
@@ -38442,7 +38495,7 @@ var render = function() {
         return _c("li", { key: data.id }, [
           _c("p", [
             _vm._v(
-              "名前：" + _vm._s(data.title) + " 年齢：" + _vm._s(data.content)
+              "名前：" + _vm._s(data.title) + " 著者：" + _vm._s(data.author)
             )
           ])
         ])
@@ -38555,19 +38608,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.task.content,
-                  expression: "task.content"
+                  value: _vm.task.title,
+                  expression: "task.title"
                 }
               ],
               staticClass: "col-sm-9 form-control-plaintext",
               attrs: { type: "text", readonly: "", id: "content" },
-              domProps: { value: _vm.task.content },
+              domProps: { value: _vm.task.title },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.task, "content", $event.target.value)
+                  _vm.$set(_vm.task, "title", $event.target.value)
                 }
               }
             })
@@ -38588,19 +38641,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.task.person_in_charge,
-                  expression: "task.person_in_charge"
+                  value: _vm.task.author,
+                  expression: "task.author"
                 }
               ],
               staticClass: "col-sm-9 form-control-plaintext",
               attrs: { type: "text", readonly: "", id: "person-in-charge" },
-              domProps: { value: _vm.task.person_in_charge },
+              domProps: { value: _vm.task.author },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.task, "person_in_charge", $event.target.value)
+                  _vm.$set(_vm.task, "author", $event.target.value)
                 }
               }
             })

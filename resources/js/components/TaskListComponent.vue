@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="container">
       <table class="table table-hover">
         <thead class="thead-light">
@@ -9,6 +8,7 @@
             <th scope="col">タイトル</th>
             <th scope="col">出版社</th>
             <th scope="col">著者</th>
+            <th scope="col">出版年</th>
             <th scope="col">詳細</th>
             <th scope="col">編集</th>
             <!-- <th scope="col">削除</th> -->
@@ -18,8 +18,9 @@
           <tr v-for="task in tasks" :key="task.id">
             <!-- <th scope="row">{{ task.id }}</th> -->
             <td>{{ task.title }}</td>
-            <td>{{ task.content }}</td>
-            <td>{{ task.person_in_charge }}</td>
+            <td>{{ task.publisher.name }}</td>
+            <td>{{ task.author }}</td>
+            <td>{{ task.year_of_publication }}</td>
             <td>
               <router-link :to="{name: 'task.show', params: {taskId: task.id }}">
                 <button class="btn btn-secondary">詳細</button>
@@ -52,6 +53,7 @@ export default {
       axios
         .get("/api/tasks")
         .then((res) => {
+          console.log(res.data);
           this.tasks = res.data;
         })
         .catch((error) => {
