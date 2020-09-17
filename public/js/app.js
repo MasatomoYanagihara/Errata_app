@@ -38439,7 +38439,7 @@ var render = function() {
     _c(
       "ul",
       _vm._l(_vm.getData, function(data) {
-        return _c("li", { key: data }, [
+        return _c("li", { key: data.id }, [
           _c("p", [
             _vm._v(
               "名前：" + _vm._s(data.title) + " 年齢：" + _vm._s(data.content)
