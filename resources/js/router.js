@@ -1,11 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import NotFoundComponent from "./components/NotFoundComponent";
-import TaskListComponent from "./components/TaskListComponent";
-import TaskCreateComponent from "./components/TaskCreateComponent";
-import TaskShowComponent from "./components/TaskShowComponent";
-import TaskEditComponent from "./components/TaskEditComponent";
-import TaskSerchComponent from "./components/TaskSerchComponent";
 
 Vue.use(VueRouter);
 
@@ -23,34 +17,52 @@ export default new VueRouter({
         // {
         //     // VueRouterに設定されていないURLはNotFoundを表示する
         //     path: "*",
-        //     component: NotFoundComponent
+        //     component: () =>
+        //         import(
+        //             /* webpackChunkName: "*" */ "./components/NotFoundComponent"
+        //         )
         // },
         {
             path: "/tasks",
             name: "task.list",
-            component: TaskListComponent
+            component: () =>
+                import(
+                    /* webpackChunkName: "task.list" */ "./components/TaskListComponent"
+                )
         },
         {
             path: "/tasks/create",
             name: "task.create",
-            component: TaskCreateComponent
+            component: () =>
+                import(
+                    /* webpackChunkName: "task.create" */ "components/TaskCreateComponent"
+                )
         },
         {
             path: "/tasks/:taskId",
             name: "task.show",
-            component: TaskShowComponent,
+            component: () =>
+                import(
+                    /* webpackChunkName: "task.show" */ "./components/TaskShowComponent"
+                ),
             props: true
         },
         {
             path: "/tasks/:taskId/edit",
             name: "task.edit",
-            component: TaskEditComponent,
+            component: () =>
+                import(
+                    /* webpackChunkName: "task.edit" */ "./components/TaskEditComponent"
+                ),
             props: true
         },
         {
             path: "/tasks/serch",
             name: "task.serch",
-            component: TaskSerchComponent
+            component: () =>
+                import(
+                    /* webpackChunkName: "task.serch" */ "./components/TaskSerchComponent"
+                )
         }
     ]
 });

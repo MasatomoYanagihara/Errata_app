@@ -1,4 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/tasks.js": "/tasks.js",
+    "/*.js": "/*.js",
+    "/task.list.js": "/task.list.js",
+    "/task.show.js": "/task.show.js",
+    "/task.js": "/task.js",
+    "/task.edit.js": "/task.edit.js",
+    "/task.se.js": "/task.se.js",
+    "/task.serch.js": "/task.serch.js"
 }
