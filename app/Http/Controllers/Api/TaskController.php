@@ -4,6 +4,8 @@
 
  use App\Models\Task;
  use App\Models\Book;
+ use App\Models\Genre;
+ use App\Models\Publisher;
  use Illuminate\Http\Request;
  use App\Http\Controllers\Controller;
 
@@ -11,13 +13,12 @@
  {
      public function index()
      {
-         //  return Book::all(); // Taskモデルから全件取得してリターン
-         return Book::with('publisher')->get();
+         return Book::with('publisher', 'genre')->get();
      }
 
      public function store(Request $request)
      {
-         return Task::create($request->all()); // リクエストで受け取ったデータを登録
+         return Book::create($request->all()); // リクエストで受け取ったデータを登録
      }
 
      public function show(Book $task)
@@ -40,17 +41,9 @@
      public function serchBook(Request $request)
      {
          $title = $request->input('title');
-         $serchBook = Task::where('title', '=', $title)
-            ->select("id", "title", "content")
+         $serchBook = Book::where('title', '=', $title)
+            ->select("id", "title", "author")
             ->get();
          return $serchBook;
      }
-     //  public function serchBook(Request $request)
-    //  {
-    //      $title = $request->input('title');
-    //      $serchBook = Task::where('title', '=', $title)
-    //         ->select("id", "title", "content")
-    //         ->get();
-    //      return $serchBook;
-    //  }
  }

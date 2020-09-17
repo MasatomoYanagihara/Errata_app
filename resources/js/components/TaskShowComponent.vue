@@ -30,7 +30,7 @@
               class="col-sm-9 form-control-plaintext"
               readonly
               id="content"
-              v-model="task.content"
+              v-model="task.title"
             />
           </div>
           <div class="form-group row border-bottom">
@@ -40,7 +40,7 @@
               class="col-sm-9 form-control-plaintext"
               readonly
               id="person-in-charge"
-              v-model="task.person_in_charge"
+              v-model="task.author"
             />
           </div>
         </form>

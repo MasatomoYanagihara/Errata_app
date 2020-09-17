@@ -4,7 +4,7 @@
         use Illuminate\Database\Schema\Blueprint;
         use Illuminate\Database\Migrations\Migration;
         
-        class CreatePublishersTable extends Migration
+        class CreateGenresTable extends Migration
         {
             /**
              * Run the migrations.
@@ -13,19 +13,19 @@
              */
             public function up()
             {
-                Schema::create("publishers", function (Blueprint $table) {
+                Schema::create("genres", function (Blueprint $table) {
 
 						$table->increments('id');
-						$table->string('name'); //出版社名
+						$table->string('name')->nullable(); //ジャンル名
 						$table->timestamps();
 						$table->softDeletes();
 
 
 
 						// ----------------------------------------------------
-						// -- SELECT [publishers]--
+						// -- SELECT [genres]--
 						// ----------------------------------------------------
-						// $query = DB::table("publishers")
+						// $query = DB::table("genres")
 						// ->get();
 						// dd($query); //For checking
 
@@ -41,7 +41,7 @@
              */
             public function down()
             {
-                Schema::dropIfExists("publishers");
+                Schema::dropIfExists("genres");
             }
         }
     

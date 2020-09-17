@@ -14,19 +14,19 @@ class CorrectsTableSeeder extends Seeder
         DB::table('Corrects')->insert(
             [
                 [
-                    'books_id'=>1,
+                    'book_id'=>1,
                     'detail'=>"ここ",
-                    'users_id'=>1
+                    'user_id'=>1
                 ],
                 [
-                    'books_id'=>2,
+                    'book_id'=>2,
                     'detail'=>"ここ",
-                    'users_id'=>3
+                    'user_id'=>3
                 ],
                 [
-                    'books_id'=>3,
+                    'book_id'=>3,
                     'detail'=>"ここ",
-                    'users_id'=>4
+                    'user_id'=>4
                 ],
             ]
         );

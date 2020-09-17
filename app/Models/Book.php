@@ -16,14 +16,14 @@ class Book extends Model
     protected $fillable = [
         'title',
         'author',
-        'publish_id',
+        'publisher_id',
         'year_of_publication',
-        'ganre_id',
+        'genre_id',
         'created_at',
-        'updata_at',
+        'updated_at',
     ];
 
-    public function correct()
+    public function corrects()
     {
         return $this->hasMany('App\Models\Correct', 'id', 'books_id');
     }

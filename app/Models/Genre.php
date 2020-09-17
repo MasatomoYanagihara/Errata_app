@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Publisher extends Model
+class Genre extends Model
 {
-    protected $table = 'publishers';
+    protected $table = 'genres';
 
     protected $fillable = [
         'name',
@@ -17,6 +17,6 @@ class Publisher extends Model
 
     public function books()
     {
-        return $this->hasMany('App\Models\Book', 'id', 'publisher_id');
+        return $this->hasMany('App\Models\Book', 'id', 'genres_id');
     }
 }

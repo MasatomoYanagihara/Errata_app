@@ -17,7 +17,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title1",
                 'author'=>"author1",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2019",
                 'genre_id' => 1,
                 'created_at' => now(),
@@ -26,7 +26,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title2",
                 'author'=>"author2",
-                'publishers_id'=> 2,
+                'publisher_id'=> 2,
                 'year_of_publication' => "2017",
                 'genre_id' => 1,
                 'created_at' => now(),
@@ -35,7 +35,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title3",
                 'author'=>"author3",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2019",
                 'genre_id' => 2,
                 'created_at' => now(),
@@ -44,7 +44,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title4",
                 'author'=>"author4",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2015",
                 'genre_id' => 1,
                 'created_at' => now(),
@@ -53,7 +53,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title5",
                 'author'=>"author5",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2019",
                 'genre_id' => 3,
                 'created_at' => now(),
@@ -62,7 +62,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title6",
                 'author'=>"author6",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2017",
                 'genre_id' => 1,
                 'created_at' => now(),
@@ -71,7 +71,7 @@ class BooksTableSeeder extends Seeder
                [
                 'title'=>"title7",
                 'author'=>"author7",
-                'publishers_id'=> 1,
+                'publisher_id'=> 1,
                 'year_of_publication' => "2018",
                 'genre_id' => 1,
                 'created_at' => now(),

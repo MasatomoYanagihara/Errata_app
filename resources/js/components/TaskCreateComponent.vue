@@ -8,16 +8,25 @@
             <input type="text" class="col-sm-9 form-control" id="title" v-model="task.title" />
           </div>
           <div class="form-group row">
-            <label for="content" class="col-sm-3 col-form-label">出版社</label>
-            <input type="text" class="col-sm-9 form-control" id="content" v-model="task.content" />
-          </div>
-          <div class="form-group row">
-            <label for="person-in-charge" class="col-sm-3 col-form-label">編集者</label>
+            <label for="publisher" class="col-sm-3 col-form-label">出版社</label>
             <input
               type="text"
               class="col-sm-9 form-control"
-              id="person-in-charge"
-              v-model="task.person_in_charge"
+              id="publisher"
+              v-model="task.publisher"
+            />
+          </div>
+          <div class="form-group row">
+            <label for="author" class="col-sm-3 col-form-label">著者</label>
+            <input type="text" class="col-sm-9 form-control" id="author" v-model="task.author" />
+          </div>
+          <div class="form-group row">
+            <label for="year_of_publication" class="col-sm-3 col-form-label">出版年</label>
+            <input
+              type="text"
+              class="col-sm-9 form-control"
+              id="year_of_publication"
+              v-model="task.year_of_publication"
             />
           </div>
           <button type="submit" class="btn btn-secondary">登録</button>
@@ -33,8 +42,9 @@ export default {
     return {
       task: {
         title: "",
-        content: "",
-        person_in_charge: "",
+        author: "",
+        publisher: "",
+        year_of_publication: "",
       },
     };
   },

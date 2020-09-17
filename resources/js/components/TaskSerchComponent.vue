@@ -6,7 +6,7 @@
     <button @click="serchBook">検索する</button>
     <ul>
       <li v-for="data in getData" :key="data.id">
-        <p>名前：{{data.title}} 年齢：{{data.content}}</p>
+        <p>名前：{{data.title}} 著者：{{data.author}}</p>
       </li>
     </ul>
   </div>

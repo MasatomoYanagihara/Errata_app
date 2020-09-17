@@ -11,18 +11,19 @@ class Correct extends Model
     protected $fillable = [
         'books_id',
         'detail',
-        'users_id',
+        'user_id',
         'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User', 'id');
     }
 
     public function book()
     {
-        return $this->belongsTo('App\Models\Book');
+        return $this->belongsTo('App\Models\Book', 'id');
     }
 }
