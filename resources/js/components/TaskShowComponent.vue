@@ -24,7 +24,7 @@
             />
           </div>
           <div class="form-group row border-bottom">
-            <label for="content" class="col-sm-3 col-form-label">内容</label>
+            <label for="content" class="col-sm-3 col-form-label">出版社</label>
             <input
               type="text"
               class="col-sm-9 form-control-plaintext"
@@ -34,7 +34,7 @@
             />
           </div>
           <div class="form-group row border-bottom">
-            <label for="person-in-charge" class="col-sm-3 col-form-label">編集者</label>
+            <label for="person-in-charge" class="col-sm-3 col-form-label">著者</label>
             <input
               type="text"
               class="col-sm-9 form-control-plaintext"

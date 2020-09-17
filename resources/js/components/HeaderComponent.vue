@@ -6,6 +6,9 @@
           <span class="navbar-brand mb-0 h1">正誤表.com</span>
         </router-link>
         <div>
+          <router-link :to="{name: 'task.serch'}">
+            <button class="btn btn-secondary">検索</button>
+          </router-link>
           <router-link :to="{name: 'task.list'}">
             <button class="btn btn-secondary">一覧</button>
           </router-link>

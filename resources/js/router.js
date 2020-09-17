@@ -5,6 +5,7 @@ import TaskListComponent from "./components/TaskListComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
 import TaskEditComponent from "./components/TaskEditComponent";
+import TaskSerchComponent from "./components/TaskSerchComponent";
 
 Vue.use(VueRouter);
 
@@ -19,11 +20,11 @@ export default new VueRouter({
         }
     },
     routes: [
-        {
-            // VueRouterに設定されていないURLはNotFoundを表示する
-            path: "*",
-            component: NotFoundComponent
-        },
+        // {
+        //     // VueRouterに設定されていないURLはNotFoundを表示する
+        //     path: "*",
+        //     component: NotFoundComponent
+        // },
         {
             path: "/tasks",
             name: "task.list",
@@ -45,6 +46,11 @@ export default new VueRouter({
             name: "task.edit",
             component: TaskEditComponent,
             props: true
+        },
+        {
+            path: "/tasks/serch",
+            name: "task.serch",
+            component: TaskSerchComponent
         }
     ]
 });

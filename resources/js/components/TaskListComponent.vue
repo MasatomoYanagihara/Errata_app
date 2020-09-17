@@ -1,39 +1,42 @@
 <template>
-  <div class="container">
-    <table class="table table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">タイトル</th>
-          <th scope="col">内容</th>
-          <th scope="col">編集者</th>
-          <th scope="col">詳細</th>
-          <th scope="col">編集</th>
-          <th scope="col">削除</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="task in tasks" :key="task.id">
-          <th scope="row">{{ task.id }}</th>
-          <td>{{ task.title }}</td>
-          <td>{{ task.content }}</td>
-          <td>{{ task.person_in_charge }}</td>
-          <td>
-            <router-link :to="{name: 'task.show', params: {taskId: task.id }}">
-              <button class="btn btn-primary">詳細</button>
-            </router-link>
-          </td>
-          <td>
-            <router-link :to="{name: 'task.edit', params: {taskId: task.id }}">
-              <button class="btn btn-success">編集</button>
-            </router-link>
-          </td>
-          <td>
+  <div>
+    
+    <div class="container">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <!-- <th scope="col">Id</th> -->
+            <th scope="col">タイトル</th>
+            <th scope="col">出版社</th>
+            <th scope="col">著者</th>
+            <th scope="col">詳細</th>
+            <th scope="col">編集</th>
+            <!-- <th scope="col">削除</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="task in tasks" :key="task.id">
+            <!-- <th scope="row">{{ task.id }}</th> -->
+            <td>{{ task.title }}</td>
+            <td>{{ task.content }}</td>
+            <td>{{ task.person_in_charge }}</td>
+            <td>
+              <router-link :to="{name: 'task.show', params: {taskId: task.id }}">
+                <button class="btn btn-secondary">詳細</button>
+              </router-link>
+            </td>
+            <td>
+              <router-link :to="{name: 'task.edit', params: {taskId: task.id }}">
+                <button class="btn btn-secondary">編集</button>
+              </router-link>
+            </td>
+            <!-- <td>
             <button class="btn btn-danger" @click="deleteTask(task.id)">削除</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>-->
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 

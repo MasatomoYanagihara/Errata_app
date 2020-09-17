@@ -1,6 +1,6 @@
 <?php
 
- namespace App\Http\Controllers;
+ namespace App\Http\Controllers\Api;
 
  use App\Models\Task;
  use Illuminate\Http\Request;
@@ -33,5 +33,14 @@
      {
          $task->delete();
          return $task;
+     }
+
+     public function serchBook(Request $request)
+     {
+         $title = $request->input('title');
+         $serchBook = Task::where('title', '=', $title)
+            ->select("id", "title", "content")
+            ->get();
+         return $serchBook;
      }
  }
